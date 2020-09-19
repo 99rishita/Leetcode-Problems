@@ -16,3 +16,23 @@ def longestCommonPrefix(strs):
 
 strs = ['flower', 'flow', 'flight']
 longestCommonPrefix(strs)
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if strs == []:
+            return ""
+        str1 = ""
+        lst = sorted(strs)
+        i = 0
+        first, last = lst[0], lst[-1]
+        f_len, l_len = len(first), len(last)
+        l = min(f_len, l_len)
+        while i < l and first[i] == last[i]:
+            str1 += first[i]
+            i += 1
+        return str1
+        
